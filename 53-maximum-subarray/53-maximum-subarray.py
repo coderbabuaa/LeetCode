@@ -12,4 +12,4 @@ class Solution:
         if max_so_far>0:
             return max_so_far
         else:
-            return max(nums)
+            return max(nums)#if all the elements are negative print the maximun element
