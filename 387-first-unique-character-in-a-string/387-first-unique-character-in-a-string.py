@@ -1,12 +1,13 @@
 class Solution:
     def firstUniqChar(self, s: str) -> int:
-        frequency = {}
+        a=Counter(s)
+        b=[]
         for i in s:
-            if i not in frequency:
-                frequency[i] = 1
-            else:
-                frequency[i] +=1
-        for i in range(len(s)):
-            if frequency[s[i]] == 1:
-                return i
-        return -1
+            if a[i]==1:
+                b.append(i)
+        if len(b)==0:
+            return -1
+        c=[]
+        for i in range(len(b)):
+            c.append(s.index(b[i]))
+        return min(c)
